@@ -1,0 +1,58 @@
+services:
+  - type: web
+    name: ryan-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.1
+      - key: RYAN_CLIENT_ORIGINS
+        sync: false
+      - key: RYAN_API_TOKEN
+        sync: false
+      - key: RYAN_LLM_API_KEY
+        sync: false
+      - key: RYAN_LLM_BASE_URL
+        value: https://api.openai.com/v1
+      - key: RYAN_LLM_MODEL
+        value: gpt-4o-mini
+      - key: RYAN_AGENT_ENDPOINT
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: BRAVE_API_KEY
+        sync: false
+      - key: HOME_ASSISTANT_URL
+        sync: false
+      - key: HOME_ASSISTANT_TOKEN
+        sync: false
+      - key: CALENDAR_ICS_URL
+        sync: false
+      - key: CALDAV_URL
+        sync: false
+      - key: CALDAV_USER
+        sync: false
+      - key: CALDAV_PASSWORD
+        sync: false
+      - key: EMAIL_IMAP_HOST
+        sync: false
+      - key: EMAIL_SMTP_HOST
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_FROM_NUMBER
+        sync: false
+      - key: DEVICE_PAIRING_SECRET
+        sync: false

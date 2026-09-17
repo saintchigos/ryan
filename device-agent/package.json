@@ -1,0 +1,12 @@
+{
+  "name": "@ryan/device-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "ryan-device": "ryan-device.mjs"
+  },
+  "scripts": {
+    "start": "node ryan-device.mjs"
+  }
+}
